@@ -1,0 +1,45 @@
+﻿@model List<UsuarioModel> //Definimos que modelo utilizaremos(La clase) y que será una lista del mismo
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Lista de usuarios
+    </div>
+    <div class="card-body">
+        <a asp-action="Guardar" asp-controller="MantenedorUsuario" class="btn btn-success"><i class="bi bi-person-plus-fill"></i> Crear nuevo</a>
+        <hr />  
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>N° identificación</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                    <th>Fecha Nacimiento</th>
+                    <th>Rol</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model){
+                    <tr>
+                        <td>@item.nombres</td>
+                        <td>@item.apellidos</td>
+                        <td>@item.identificacion</td>
+                        <td>@item.telefono</td>
+                        <td>@item.correo</td>
+                        <td>@item.fechaNacimiento.ToString("dd/MM/yyyy")</td>
+                        <td>@item.rol</td>
+                        <td>
+                            <a asp-action="Editar" asp-controller="MantenedorUsuario" class="btn btn-primary btn-sm" asp-route-idUsuario="@item.idUsuario"><i class="bi bi-pencil-square"></i></a>
+                            <a asp-action="Eliminar" asp-controller="MantenedorUsuario" class="btn btn-danger btn-sm" asp-route-idUsuario="@item.idUsuario"><i class="bi bi-trash-fill"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

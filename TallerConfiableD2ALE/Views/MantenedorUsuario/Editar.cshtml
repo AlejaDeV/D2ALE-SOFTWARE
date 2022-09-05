@@ -1,0 +1,62 @@
+﻿@model UsuarioModel //Definimos que modelo utilizaremos(La clase)
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        Editar usuario
+    </div>
+    <div class="card-body">
+        <form asp-action="Editar" asp-controller="MantenedorUsuario" method="post">
+            <input asp-for="idUsuario" type="hidden" class="form-control">
+            <div class="mb-3">
+                <label class="form-label">Nombres</label>
+                <input asp-for="nombres" type="text" class="form-control">
+                <span asp-validation-for="nombres" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellidos</label>
+                <input asp-for="apellidos" type="text" class="form-control">
+                <span asp-validation-for="apellidos" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Número cédula</label>
+                <input asp-for="identificacion" type="text" class="form-control">
+                <span asp-validation-for="identificacion" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Teléfono</label>
+                <input asp-for="telefono" type="text" class="form-control">
+                <span asp-validation-for="telefono" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Correo</label>
+                <input asp-for="correo" type="email" class="form-control">
+                <span asp-validation-for="correo" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Contraseña</label>
+                <input asp-for="contrasena" type="text" class="form-control">
+                <span asp-validation-for="contrasena" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Fecha nacimiento</label>
+                <input asp-for="fechaNacimiento" type="date" class="form-control">
+            </div>
+            <div class="mb-3" hidden>
+                <label class="form-label">Tipo de Usuario</label>
+                <select asp-for="rolFK" class="form-select">
+                    <option selected value="1">Cliente</option>
+                    <option value="2">Auxiliar</option>
+                    <option value="3">Jefe de Operaciones</option>
+                    <option value="4">Mecánico</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary"><i class="bi bi-person-plus-fill"></i> Guardar</button>
+            <a asp-action="Listar" asp-controller="MantenedorUsuario" class="btn btn-warning"><i class="bi bi-list"></i> Volver a la lista</a>
+        </form>
+    </div>
+</div>
+
