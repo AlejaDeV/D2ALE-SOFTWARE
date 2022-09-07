@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\jhoan\\MisionTic\\ciclo 3\\D2ALE\\TallerConfiableD2ALE\\TallerConfiableD2ALE\\TallerConfiableD2ALE.csproj": {}
+    "E:\\ALEJA\\MISIONTIC2022\\CICLO 3\\Desarrollo de Software\\D2ALE\\TallerConfiableD2ALE\\D2ALE-SOFTWARE\\TallerConfiableD2ALE\\TallerConfiableD2ALE.csproj": {}
   },
   "projects": {
-    "D:\\jhoan\\MisionTic\\ciclo 3\\D2ALE\\TallerConfiableD2ALE\\TallerConfiableD2ALE\\TallerConfiableD2ALE.csproj": {
+    "E:\\ALEJA\\MISIONTIC2022\\CICLO 3\\Desarrollo de Software\\D2ALE\\TallerConfiableD2ALE\\D2ALE-SOFTWARE\\TallerConfiableD2ALE\\TallerConfiableD2ALE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\jhoan\\MisionTic\\ciclo 3\\D2ALE\\TallerConfiableD2ALE\\TallerConfiableD2ALE\\TallerConfiableD2ALE.csproj",
+        "projectUniqueName": "E:\\ALEJA\\MISIONTIC2022\\CICLO 3\\Desarrollo de Software\\D2ALE\\TallerConfiableD2ALE\\D2ALE-SOFTWARE\\TallerConfiableD2ALE\\TallerConfiableD2ALE.csproj",
         "projectName": "TallerConfiableD2ALE",
-        "projectPath": "D:\\jhoan\\MisionTic\\ciclo 3\\D2ALE\\TallerConfiableD2ALE\\TallerConfiableD2ALE\\TallerConfiableD2ALE.csproj",
-        "packagesPath": "C:\\Users\\Jhoan David Lozano\\.nuget\\packages\\",
-        "outputPath": "D:\\jhoan\\MisionTic\\ciclo 3\\D2ALE\\TallerConfiableD2ALE\\TallerConfiableD2ALE\\obj\\",
+        "projectPath": "E:\\ALEJA\\MISIONTIC2022\\CICLO 3\\Desarrollo de Software\\D2ALE\\TallerConfiableD2ALE\\D2ALE-SOFTWARE\\TallerConfiableD2ALE\\TallerConfiableD2ALE.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "E:\\ALEJA\\MISIONTIC2022\\CICLO 3\\Desarrollo de Software\\D2ALE\\TallerConfiableD2ALE\\D2ALE-SOFTWARE\\TallerConfiableD2ALE\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Jhoan David Lozano\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
