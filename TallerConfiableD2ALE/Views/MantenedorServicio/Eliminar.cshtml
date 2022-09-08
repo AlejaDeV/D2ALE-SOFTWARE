@@ -10,8 +10,8 @@
     <div class="card-body">
         <form asp-action="Eliminar" asp-controller="MantenedorServicio" method="post">
             <input asp-for="IdServicio" type="hidden" class="form-control" />          
-            <div class="aler alert-danger" role="alert">
-                ¿Esta seguro que desea eliminar :@Html.DisplayTextFor(m=>m.IdServicio)?
+            <div class="alert alert-danger" role="alert">
+                <span>¿Esta seguro que desea eliminar el servicio #@Html.DisplayTextFor(m => m.IdServicio) del vehículo con placas "@Html.DisplayFor(m => m.VehiculoFK)" ?</span>
             </div>
             <button type="submit" class="btn btn-danger"><i ></i> Eliminar</button>
             <a asp-action="Listar" asp-controller="MantenedorServicio" class="btn btn-warning"><i class="bi bi-list"></i> Cancelar</a>

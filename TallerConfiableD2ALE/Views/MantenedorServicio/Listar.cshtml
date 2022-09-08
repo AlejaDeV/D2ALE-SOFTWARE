@@ -9,9 +9,9 @@
         Lista de Servicios
     </div>
     <div class="card-body">
-        <a asp-action="Guardar" asp-controller="MantenedorServicio" class="btn btn-success"> Crear Servicio</a>
+        <a asp-action="Guardar" asp-controller="MantenedorServicio" class="btn btn-success align-self-end"> Nuevo Servicio <i class="bi bi-plus-lg"></i></a>
         <hr />  
-        <table class="table table-bordered">
+        <table class="table primary table-bordere">
             <thead>
                 <tr>
                     <th>N° Servicio</th>
@@ -21,10 +21,10 @@
                     <th>Nivel Aceite</th>
                     <th>Nivel Refrigerante</th>
                     <th>Nivel Liquido de Dirección</th>
-                    <th>Nivel Liquido Frenos</th>
-                    <th>Maestro</th>
+                    <th>Nivel Liquido Frenos</th>                    
                     <th>Mecánico Encargado</th>
                     <th>Fecha de Servicio</th>
+                    <th>Opciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,13 +38,12 @@
                         <td>@item.NivAceite</td>
                         <td>@item.NivRefrigerante</td>
                         <td>@item.NivLiquidoDireccion</td>
-                        <td>@item.NivLiquidoFrenos</td>
-                        <td>@item.MaestroFK</td>
-                        <td>@item.UsuarioFK</td>
+                        <td>@item.NivLiquidoFrenos</td>                        
+                        <td>@item.MecanicoFK</td>
                         <td>@item.FechaCompra.ToString("dd/MM/yyyy")</td>                        
                         <td>
-                            <a asp-action="Editar" asp-controller="MantenedorServicio" class="btn btn-primary btn-sm" asp-route-idUsuario="@item.IdServicio"><i class="bi bi-pencil-square"></i></a>
-                            <a asp-action="Eliminar" asp-controller="MantenedorServicio" class="btn btn-danger btn-sm" asp-route-idUsuario="@item.IdServicio"><i class="bi bi-trash-fill"></i></a>
+                            <a asp-action="Editar" asp-controller="MantenedorServicio" class="btn btn-primary btn-sm" asp-route-IdServicio="@item.IdServicio"><i class="bi bi-pencil-square"></i></a>
+                            <a asp-action="Eliminar" asp-controller="MantenedorServicio" class="btn btn-danger btn-sm" asp-route-IdServicio="@item.IdServicio"><i class="bi bi-trash-fill"></i></a>
                         </td>
                     </tr>
                 }

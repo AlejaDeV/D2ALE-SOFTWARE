@@ -30,10 +30,9 @@ namespace TallerConfiableD2ALE.Datos
                             NivLiquidoFrenos = dr["nivLiquidoFrenos"].ToString(),
                             NivRefrigerante = dr["nivRefrigerante"].ToString(),
                             NivLiquidoDireccion = dr["nivLiquidoDireccion"].ToString(),
-                            FechaCompra = Convert.ToDateTime(dr["fechaCompra"]),
-                            MaestroFK = Convert.ToInt32(dr["maestroFK"]),
+                            FechaCompra = Convert.ToDateTime(dr["fechaCompra"]),                            
                             VehiculoFK = dr["vehiculoFK"].ToString(),
-                            UsuarioFK  = Convert.ToInt32(dr["usuarioFK"])
+                            MecanicoFK  = Convert.ToInt32(dr["mecanicoFK"])
                         });
                     }
                 }
@@ -64,10 +63,9 @@ namespace TallerConfiableD2ALE.Datos
                         oServicio.NivLiquidoFrenos = dr["nivLiquidoFrenos"].ToString();
                         oServicio.NivRefrigerante = dr["nivRefrigerante"].ToString();
                         oServicio.NivLiquidoDireccion = dr["nivLiquidoDireccion"].ToString();
-                        oServicio.FechaCompra = Convert.ToDateTime(dr["fechaCompra"]);
-                        oServicio.MaestroFK = Convert.ToInt32(dr["maestroFK"]);
-                        oServicio.VehiculoFK = dr["vehiculoFK"].ToString();
-                        oServicio.UsuarioFK = Convert.ToInt32(dr["usuarioFK"]);
+                        oServicio.FechaCompra = Convert.ToDateTime(dr["fechaCompra"]);                        
+                        oServicio.VehiculoFK = dr["vehiculoFK"].ToString();                        
+                        oServicio.MecanicoFK = Convert.ToInt32(dr["mecanicoFK"]);
                     }
                 }                
             }
@@ -91,10 +89,9 @@ namespace TallerConfiableD2ALE.Datos
                     cmd.Parameters.AddWithValue("nivLiquidoFrenos", oservicio.NivLiquidoFrenos);
                     cmd.Parameters.AddWithValue("nivRefrigerante", oservicio.NivRefrigerante);
                     cmd.Parameters.AddWithValue("nivLiquidoDireccion", oservicio.NivLiquidoDireccion);
-                    cmd.Parameters.AddWithValue("fechaCompra", oservicio.FechaCompra);
-                    cmd.Parameters.AddWithValue("maestroFK", oservicio.MaestroFK);
+                    cmd.Parameters.AddWithValue("fechaCompra", oservicio.FechaCompra);                    
                     cmd.Parameters.AddWithValue("vehiculoFK", oservicio.VehiculoFK);
-                    cmd.Parameters.AddWithValue("usuarioFK", oservicio.UsuarioFK);
+                    cmd.Parameters.AddWithValue("mecanicoFK", oservicio.MecanicoFK);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
@@ -108,7 +105,7 @@ namespace TallerConfiableD2ALE.Datos
             return resp;
         }
         //Metodo para Editar
-        public bool Editar(ServicioModel oservicio)
+        public bool Editar(ServicioModel oServicio)
         {
             bool resp;
             try
@@ -119,17 +116,16 @@ namespace TallerConfiableD2ALE.Datos
                 {
                     conexion.Open();
                     SqlCommand cmd = new SqlCommand("sp_EditarServicio", conexion);
-                    cmd.Parameters.AddWithValue("idServicio", oservicio.IdServicio);
-                    cmd.Parameters.AddWithValue("tipoServicio", oservicio.TipoServicio);
-                    cmd.Parameters.AddWithValue("descripcion", oservicio.Descripcion);
-                    cmd.Parameters.AddWithValue("nivAceite", oservicio.NivAceite);
-                    cmd.Parameters.AddWithValue("nivLiquidoFrenos", oservicio.NivLiquidoFrenos);
-                    cmd.Parameters.AddWithValue("nivRefrigerante", oservicio.NivRefrigerante);
-                    cmd.Parameters.AddWithValue("nivLiquidoDireccion", oservicio.NivLiquidoDireccion);
-                    cmd.Parameters.AddWithValue("fechaCompra", oservicio.FechaCompra);
-                    cmd.Parameters.AddWithValue("maestroFK", oservicio.MaestroFK);
-                    cmd.Parameters.AddWithValue("vehiculoFK", oservicio.VehiculoFK);
-                    cmd.Parameters.AddWithValue("usuarioFK", oservicio.UsuarioFK);
+                    cmd.Parameters.AddWithValue("idServicio", oServicio.IdServicio);
+                    cmd.Parameters.AddWithValue("tipoServicio", oServicio.TipoServicio);
+                    cmd.Parameters.AddWithValue("descripcion", oServicio.Descripcion);
+                    cmd.Parameters.AddWithValue("nivAceite", oServicio.NivAceite);
+                    cmd.Parameters.AddWithValue("nivLiquidoFrenos", oServicio.NivLiquidoFrenos);
+                    cmd.Parameters.AddWithValue("nivRefrigerante", oServicio.NivRefrigerante);
+                    cmd.Parameters.AddWithValue("nivLiquidoDireccion", oServicio.NivLiquidoDireccion);
+                    cmd.Parameters.AddWithValue("fechaCompra", oServicio.FechaCompra);                    
+                    cmd.Parameters.AddWithValue("vehiculoFK", oServicio.VehiculoFK);
+                    cmd.Parameters.AddWithValue("mecanicoFK", oServicio.MecanicoFK);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
@@ -154,7 +150,7 @@ namespace TallerConfiableD2ALE.Datos
                 {
                     conexion.Open();
                     SqlCommand cmd = new SqlCommand("sp_EliminarServicio", conexion);
-                    cmd.Parameters.AddWithValue("IdServicio", IdServicio);                    
+                    cmd.Parameters.AddWithValue("idServicio", IdServicio);                    
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }

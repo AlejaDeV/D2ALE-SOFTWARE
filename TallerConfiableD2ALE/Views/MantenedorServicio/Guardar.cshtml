@@ -6,7 +6,7 @@
 
 <div class="card">
     <div class="card-header">
-        Crear Servicio
+        <h3 style="text-align:center">Crear Servicio</h3>
     </div>
     <div class="card-body">
         <form asp-action="Guardar" asp-controller="MantenedorServicio" method="post">
@@ -46,14 +46,9 @@
                 <span asp-validation-for="NivLiquidoFrenos" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label class="form-label">Maestro</label>
-                <input asp-for="MaestroFK" type="number" class="form-control">
-                <span asp-validation-for="MaestroFK" class="text-danger"></span>
-            </div>
-            <div class="mb-3">
                 <label class="form-label">Mecánico Encargado</label>
-                <input asp-for="UsuarioFK" type="number" class="form-control">
-                <span asp-validation-for="UsuarioFK" class="text-danger"></span>
+                <input asp-for="MecanicoFK" type="number" class="form-control">
+                <span asp-validation-for="MecanicoFK" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label class="form-label">Fecha de Realización</label>

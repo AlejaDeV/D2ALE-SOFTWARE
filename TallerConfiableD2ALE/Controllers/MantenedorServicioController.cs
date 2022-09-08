@@ -30,11 +30,11 @@ namespace TallerConfiableD2ALE.Controllers
             else
                 return View();
         }
-        //
-        public IActionResult Editar(int idServicio)
+        //Metodo para Editar
+        public IActionResult Editar(int IdServicio)
         {
-            //Solo nos devuelve la vista del formulario guardar
-            var oservicio = servicioDatos.Obtener(idServicio);
+            //Metodo que nos devuelve la vista del formulario.
+            var oservicio = servicioDatos.Obtener(IdServicio);
             return View(oservicio);
         }
         [HttpPost]
@@ -50,12 +50,14 @@ namespace TallerConfiableD2ALE.Controllers
             else
                 return View();
         }        
-        public IActionResult Eliminar(int idServicio)
+        //METODO PARA ELIMINAR
+        public IActionResult Eliminar(int IdServicio)
         {
             //Solo nos devuelve la vista del formulario guardar
-            var oservicio = servicioDatos.Obtener(idServicio);
+            var oservicio = servicioDatos.Obtener(IdServicio);
             return View(oservicio);
-        }        
+        }
+        [HttpPost]
         public IActionResult Eliminar(ServicioModel oServicio)
         {
             var respuesta = servicioDatos.Eliminar(oServicio.IdServicio);

@@ -15,9 +15,9 @@ namespace TallerConfiableD2ALE.Models
         public string? NivLiquidoDireccion{ get; set; }
         [Required(ErrorMessage = "El campo de la fecha es obligatorio")]
         public DateTime FechaCompra{ get; set; }
-        public int MaestroFK { get; set; }
         [Required(ErrorMessage = "El campo 'Placa Vehículo' es obligatorio")]
         public string? VehiculoFK { get; set; }
-        public int UsuarioFK { get; set; }
+        [Required(ErrorMessage = "El campo 'Mecánico' es obligatorio")]
+        public int MecanicoFK { get; set; }
     }
 }
