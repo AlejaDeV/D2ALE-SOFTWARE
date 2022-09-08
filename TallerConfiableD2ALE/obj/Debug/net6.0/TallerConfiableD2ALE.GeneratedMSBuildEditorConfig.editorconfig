@@ -39,6 +39,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudGVuZWRvclNlcnZpY2lvXExpc3Rhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/ALEJA/MISIONTIC2022/CICLO 3/Desarrollo de Software/D2ALE/TallerConfiableD2ALE/D2ALE-SOFTWARE/TallerConfiableD2ALE/Views/MantenedorSoat/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudGVuZWRvclNvYXRcRWRpdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ALEJA/MISIONTIC2022/CICLO 3/Desarrollo de Software/D2ALE/TallerConfiableD2ALE/D2ALE-SOFTWARE/TallerConfiableD2ALE/Views/MantenedorSoat/Eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudGVuZWRvclNvYXRcRWxpbWluYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ALEJA/MISIONTIC2022/CICLO 3/Desarrollo de Software/D2ALE/TallerConfiableD2ALE/D2ALE-SOFTWARE/TallerConfiableD2ALE/Views/MantenedorSoat/Guardar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudGVuZWRvclNvYXRcR3VhcmRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ALEJA/MISIONTIC2022/CICLO 3/Desarrollo de Software/D2ALE/TallerConfiableD2ALE/D2ALE-SOFTWARE/TallerConfiableD2ALE/Views/MantenedorSoat/Listar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudGVuZWRvclNvYXRcTGlzdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/ALEJA/MISIONTIC2022/CICLO 3/Desarrollo de Software/D2ALE/TallerConfiableD2ALE/D2ALE-SOFTWARE/TallerConfiableD2ALE/Views/MantenedorUsuario/Editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudGVuZWRvclVzdWFyaW9cRWRpdGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
