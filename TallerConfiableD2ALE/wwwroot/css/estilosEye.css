@@ -1,0 +1,52 @@
+body{
+    background-color: steelblue;
+}
+
+.container{
+    max-width: 50vw;
+    width: 95%;
+}
+
+.wrapp-input{
+    display: flex;
+    flex-wrap: no-wrap;
+    width: 100%;
+    position: relative;
+    /* min-height: 50px; */
+    /* background-color: aqua; */
+}
+
+/* .wrapp-input .form-label{
+    -ms-flex-wrap: wrap;
+} */
+.wrapp-input input{
+    outline: none;/*quitar línea externa*/
+    width: 100%;
+    /* height: 50px; */
+    border-radius: 5px 0 0 5px;
+    
+}
+
+.wrapp-input .iconEye{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(228, 227, 227);
+    border-radius: 0 5px 5px 0;
+    padding: 0px 12px;
+    right: 0;
+}
+
+.wrapp-input .iconEye:hover{
+    cursor: pointer;
+    font-weight: bold !important;
+    /* color: blue; */
+}
+
+.btn-save{
+    background-color: steelblue;
+}
+
+.btn-save:hover{
+    background-color: rgb(42, 98, 145) !important;
+}
