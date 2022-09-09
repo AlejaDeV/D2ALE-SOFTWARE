@@ -43,10 +43,11 @@ body{
     /* color: blue; */
 }
 
-.btn-save{
-    background-color: steelblue;
+.btn-save {
+    background-color: #2962ff;
+    color: white;
 }
 
-.btn-save:hover{
-    background-color: rgb(42, 98, 145) !important;
+.btn-save:hover {
+        background-color: rgb(42, 98, 145) !important;
 }
