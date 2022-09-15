@@ -78,29 +78,29 @@ insert into rol(nombreRol) VALUES ('Cliente');
 insert into rol(nombreRol) VALUES ('Auxiliar');
 insert into rol(nombreRol) VALUES ('Jefe de Operaciones');
 insert into rol(nombreRol) VALUES ('Mecánico');
-GO
 
-create PROCEDURE sp_ListarRol
-as 
+GO
+--Stored Procedures ROL--
+
+CREATE PROCEDURE sp_ListarRol
+AS
 BEGIN
-    select * from rol
+    SELECT * FROM rol
 END
 GO
 
-create PROCEDURE sp_ObtenerRol(@idRol int)
+CREATE PROCEDURE sp_ObtenerRol(@idRol int)
 AS
 BEGIN
-    SELECT * from rol where idRol=@idRol 
+    SELECT * FROM rol WHERE idRol=@idRol 
 END
 
 insert into usuario(identificacion, nombres, apellidos, telefono, correo, contrasena, fechaNacimiento,rolFK) VALUES (1234,'Otro','Usuario','3203019435','jl@gmail.com','1234', '1998-05-15',1);
 insert into usuario(identificacion, nombres, apellidos, telefono, correo, contrasena, fechaNacimiento,rolFK) VALUES (1234,'Otro2','Usuario2','3203019435','jl@gmail.com','1234', '1998-05-15',2);
 insert into usuario(identificacion, nombres, apellidos, telefono, correo, contrasena, fechaNacimiento,rolFK) VALUES (1234,'Otro3','Usuario3','3203019435','jl@gmail.com','1234', '1998-05-15',3);
 insert into usuario(identificacion, nombres, apellidos, telefono, correo, contrasena, fechaNacimiento,rolFK) VALUES (1234,'Otro4','Usuario4','3203019435','jl@gmail.com','1234', '1998-05-15',4);
-
-
-
 GO
+--Stored Procedures Usuario--
 
 CREATE PROCEDURE sp_ListarUsuario
 AS
@@ -157,20 +157,19 @@ AS
 BEGIN
     DELETE FROM usuario WHERE idUsuario = @idUsuario
 END
-
 GO
+--Stored Procedures Servicio--
+
 CREATE PROCEDURE sp_ListarServicio AS
 BEGIN
     SELECT * FROM servicio
 END
-
 GO
 
 CREATE PROCEDURE sp_ObtenerServicio (@idServicio int) AS
 BEGIN
     SELECT * FROM servicio WHERE idServicio = @idServicio
 END
-
 GO
 
 CREATE PROCEDURE sp_GuardarServicio 
@@ -198,7 +197,6 @@ BEGIN
         @mecanicoFK
     )
 END
-
 GO
 
 CREATE PROCEDURE sp_EditarServicio
@@ -228,48 +226,56 @@ CREATE PROCEDURE sp_EliminarServicio (@idServicio int) AS
 BEGIN
     DELETE FROM servicio WHERE idServicio = @idServicio
 END
-
 GO
-CREATE procedure sp_GuardarSoat(
+--Stored Procedures Soat--
+
+CREATE PROCEDURE sp_ListarSoat
+AS
+BEGIN
+     SELECT * FROM soat
+END
+GO
+
+CREATE PROCEDURE sp_ObtenerSoat (@idSOAT int)
+AS
+BEGIN
+     SELECT * FROM soat WHERE idSOAT=@idSOAT
+END
+GO
+
+CREATE PROCEDURE sp_GuardarSoat(
 @vehiculoFK VARCHAR(10),
 @fechaCompra DATE,
 @fechaVencimiento DATE
 )
-as
-begin
-         insert into soat(vehiculoFK,fechaCompra,fechaVencimiento) values(@vehiculoFK,@fechaCompra,@fechaVencimiento)
-end
-GO
-
-CREATE procedure sp_ListarSoat
-as
+AS
 BEGIN
-     select * from soat
+      INSERT INTO soat(vehiculoFK,fechaCompra,fechaVencimiento) values(@vehiculoFK,@fechaCompra,@fechaVencimiento)
 END
 GO
 
-CREATE procedure sp_EditarSoat(
+CREATE PROCEDURE sp_EditarSoat(
 @idSOAT int,
 @fechaCompra DATE,
 @fechaVencimiento DATE
 )
-as
-begin
-         update soat set  fechaCompra=@fechaCompra,
-          fechaVencimiento=@fechaVencimiento  where idSOAT=@idSOAT
-end
+AS
+BEGIN
+        UPDATE soat SET  fechaCompra=@fechaCompra,
+          fechaVencimiento=@fechaVencimiento  WHERE idSOAT=@idSOAT
+END
 GO
 
 CREATE PROCEDURE sp_EliminarSoat(
     @idSOAT INT
 )
-as 
+AS 
 BEGIN
-    delete from soat where idSOAT=@idSOAT
-end
-
---Stored Procedures Vehiculo--
+    DELETE FROM soat WHERE idSOAT=@idSOAT
+END
 GO
+--Stored Procedures Vehiculo--
+
 CREATE PROCEDURE sp_ListarVehiculo
 AS
 BEGIN
@@ -278,8 +284,8 @@ BEGIN
     INNER JOIN usuario usuarios
     ON usuarios.idUsuario = vehiculos.usuarioFK
 END
-
 GO
+
 CREATE PROCEDURE sp_ObtenerVehiculo(@placa varchar(10))
 AS
 BEGIN
@@ -290,8 +296,8 @@ BEGIN
     INNER JOIN usuario
     ON usuario.idUsuario = vehiculo.usuarioFK WHERE vehiculo.placa = @placa
 END
-
 GO
+
 CREATE PROCEDURE sp_GuardarVehiculo(
 @placa VARCHAR(10),
 @marca VARCHAR(20),
@@ -308,8 +314,8 @@ BEGIN
 
     INSERT INTO vehiculo(placa, marca, modelo, tipoVehiculo, cilindraje, ciudadRegistro, usuarioFK)VALUES(@placa, @marca, @modelo, @tipoVehiculo, @cilindraje, @ciudadRegistro, @usuarioFK)
 END
-
 GO
+
 CREATE PROCEDURE sp_EditarVehiculo(
     @placa VARCHAR(10),
     @marca VARCHAR(20),
@@ -325,19 +331,68 @@ BEGIN
 
     UPDATE vehiculo SET marca = @marca, modelo = @modelo, tipoVehiculo = @tipoVehiculo, cilindraje = @cilindraje, ciudadRegistro = @ciudadRegistro, usuarioFK = @usuarioFK WHERE placa = @placa
 END
+GO
 
 --IMPORTANTE
 --¿Creamos procedimiento para editar la placa?
 
-GO
 CREATE PROCEDURE sp_EliminarVehiculo(@placa VARCHAR(10))
 AS
 BEGIN
     DELETE FROM vehiculo WHERE placa = @placa
 END
-
+GO
 execute sp_ListarVehiculo;
 EXECUTE sp_ListarUsuario
 EXECUTE sp_ObtenerVehiculo(ABC-123)
 
 --drop PROCEDURE sp_ObtenerVehiculo
+
+--Stored Procedures Repuesto--
+CREATE PROCEDURE sp_ListarRepuesto AS
+BEGIN   
+    SELECT * FROM repuesto
+END
+GO
+
+CREATE PROCEDURE sp_ObtenerRepuesto (@IdRepuesto INT) AS
+BEGIN   
+     SELECT * FROM repuesto WHERE idRepuesto = @IdRepuesto
+END
+GO
+
+CREATE PROCEDURE sp_GuardarRepuesto 
+(
+    @IdRepuesto INT,
+    @NombreRepuesto VARCHAR(50),
+    @Precio INT
+) AS BEGIN
+    INSERT INTO repuesto
+    (
+        idRepuesto, nombreRepuesto, precio
+    )
+    VALUES
+    (
+        @IdRepuesto, @NombreRepuesto, @Precio
+    )
+END
+GO
+
+CREATE PROCEDURE sp_EditarRepuesto
+(
+    @IdRepuesto INT,
+    @NombreRepuesto VARCHAR(50),
+    @Precio INT
+)AS 
+BEGIN
+    UPDATE repuesto SET
+    nombreRepuesto = @NombreRepuesto, precio = @Precio
+    WHERE idRepuesto = @IdRepuesto
+END
+GO
+
+CREATE PROCEDURE sp_EliminarRepuesto (@IdRepuesto INT) AS
+BEGIN 
+    DELETE FROM repuesto WHERE idRepuesto = @IdRepuesto
+END
+GO
