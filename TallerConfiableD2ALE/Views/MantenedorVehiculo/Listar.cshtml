@@ -1,0 +1,46 @@
+﻿@model List<VehiculoModel>
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Lista de vehiculos
+    </div>
+    <div class="card-body">
+        <a asp-action="Guardar" asp-controller="MantenedorVehiculo" class="btn btn-success"><i class="bi bi-car-front-fill"></i> Crear nuevo</a>
+        <hr />
+        <table class="table table-bordered">
+            <thead>
+                <tr class="">
+                    <th>Placa</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Tipo de vehículo</th>
+                    <th>Cilindraje</th>
+                    <th>Ciudad de Registro</th>
+                    <th>Dueño</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.placa</td>
+                        <td>@item.marca</td>
+                        <td>@item.modelo</td>
+                        <td>@item.tipoVehiculo</td>
+                        <td>@item.cilindraje</td>
+                        <td>@item.ciudadRegistro</td>
+                        <td>@item.nombre @item.apellido</td>
+                        <td class="d-flex justify-content-around">
+                            <a asp-action="Editar" asp-controller="MantenedorVehiculo" class="btn btn-primary btn-sm" asp-route-placa="@item.placa"><i class="bi bi-pencil-square"></i></a>
+                            <a asp-action="Eliminar" asp-controller="MantenedorVehiculo" class="btn btn-danger btn-sm" asp-route-placa="@item.placa"><i class="bi bi-trash-fill"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

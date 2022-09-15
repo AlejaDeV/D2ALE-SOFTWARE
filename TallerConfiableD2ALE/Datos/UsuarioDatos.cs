@@ -15,13 +15,13 @@ namespace TallerConfiableD2ALE.Datos
             {
                 conexion.Open();
                 SqlCommand cmd = new SqlCommand("sp_ListarUsuario",conexion);//Definimos que procedimiento almacenado se utilizara para listar los usuarios
-                cmd.CommandType = CommandType.StoredProcedure;//Definimos que vamso a trabajar con un procedimiento almacenado
+                cmd.CommandType = CommandType.StoredProcedure;//Definimos que vamos a trabajar con un procedimiento almacenado
 
                 using(var dr = cmd.ExecuteReader())
                 {
                     while (dr.Read())
                     {
-                        var temp = Convert.ToDateTime(dr["fechaNacimiento"]);//Agregamos esta línea para pasar del objeto a Datetime
+                        //var temp = Convert.ToDateTime(dr["fechaNacimiento"]);//Agregamos esta línea para pasar del objeto a Datetime
 
                         oLista.Add(new UsuarioModel() { 
                             idUsuario = Convert.ToInt32(dr["idUsuario"]),

@@ -1,0 +1,23 @@
+﻿@model VehiculoModel
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        Eliminar vehículo
+    </div>
+    <div class="card-body">
+        <form asp-action="Eliminar" asp-controller="MantenedorVehiculo" method="post">
+
+            <input asp-for="placa" type="hidden" class="form-control">
+            <div class="alert alert-danger" role="alert">
+                <span>¿Desea eliminar el vehiculo con placa: @Html.DisplayTextFor(m => m.placa)?</span>
+            </div>
+
+            <button type="submit" class="btn btn-danger"><i class="bi bi-trash-fill"></i> Eliminar</button>
+            <a asp-action="Listar" asp-controller="MantenedorVehiculo" class="btn btn-warning"><i class="bi bi-list"></i> Volver a la lista</a>
+        </form>
+    </div>
+</div>
+
