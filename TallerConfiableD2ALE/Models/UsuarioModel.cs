@@ -14,6 +14,7 @@ namespace TallerConfiableD2ALE.Models
         [Required(ErrorMessage = "El teléfono es obligatorio")]
         public string? telefono { get; set; }
         [Required(ErrorMessage = "El correo es un campo obligatorio.")]
+        [EmailAddress]
         public string? correo { get; set; }
         [Required(ErrorMessage = "La contraseña es obligatoria")]
         public string? contrasena { get; set; }

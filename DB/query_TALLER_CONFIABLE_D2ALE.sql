@@ -95,10 +95,10 @@ BEGIN
     SELECT * FROM rol WHERE idRol=@idRol 
 END
 
-insert into usuario(identificacion, nombres, apellidos, telefono, correo, contrasena, fechaNacimiento,rolFK) VALUES (1234,'Otro','Usuario','3203019435','jl@gmail.com','1234', '1998-05-15',1);
-insert into usuario(identificacion, nombres, apellidos, telefono, correo, contrasena, fechaNacimiento,rolFK) VALUES (1234,'Otro2','Usuario2','3203019435','jl@gmail.com','1234', '1998-05-15',2);
-insert into usuario(identificacion, nombres, apellidos, telefono, correo, contrasena, fechaNacimiento,rolFK) VALUES (1234,'Otro3','Usuario3','3203019435','jl@gmail.com','1234', '1998-05-15',3);
-insert into usuario(identificacion, nombres, apellidos, telefono, correo, contrasena, fechaNacimiento,rolFK) VALUES (1234,'Otro4','Usuario4','3203019435','jl@gmail.com','1234', '1998-05-15',4);
+insert into usuario(identificacion, nombres, apellidos, telefono, correo, contrasena, fechaNacimiento,rolFK) VALUES (123,'Soy un','Cliente','3203019435','cliente@gmail.com','1234', '1998-05-15',1);
+insert into usuario(identificacion, nombres, apellidos, telefono, correo, contrasena, fechaNacimiento,rolFK) VALUES (1234,'Soy un','Auxiliar','3203019435','auxiliar@gmail.com','1234', '1998-05-15',2);
+insert into usuario(identificacion, nombres, apellidos, telefono, correo, contrasena, fechaNacimiento,rolFK) VALUES (12345,'Soy un','Jefe de Operaciones','3203019435','jefeOperaciones@gmail.com','1234', '1998-05-15',3);
+insert into usuario(identificacion, nombres, apellidos, telefono, correo, contrasena, fechaNacimiento,rolFK) VALUES (123456,'Soy un','Mecánico','3203019435','Mecanico@gmail.com','1234', '1998-05-15',4);
 GO
 --Stored Procedures Usuario--
 
@@ -342,10 +342,6 @@ BEGIN
     DELETE FROM vehiculo WHERE placa = @placa
 END
 GO
-execute sp_ListarVehiculo;
-EXECUTE sp_ListarUsuario
-EXECUTE sp_ObtenerVehiculo(ABC-123)
-
 --drop PROCEDURE sp_ObtenerVehiculo
 
 --Stored Procedures Repuesto--
@@ -396,3 +392,6 @@ BEGIN
     DELETE FROM repuesto WHERE idRepuesto = @IdRepuesto
 END
 GO
+
+EXECUTE sp_ListarUsuario
+--DROP DATABASE PRUEBA

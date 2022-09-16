@@ -24,10 +24,11 @@ namespace TallerConfiableD2ALE.Controllers
             //Recibe un objeto y lo guarda en la Base de datos
             if (!ModelState.IsValid)//Verificamos si las validaciones no se cumplen
                 return View();
-
-            var respuesta = vehiculoDatos.Guardar(oVehiculo);
+            //else
+                //return RedirectToAction("Listar");
+                var respuesta = vehiculoDatos.Guardar(oVehiculo);
             if (respuesta)
-                return RedirectToAction("Listar");//Si se guarda redireccionamos a la vista listar
+                return RedirectToAction("Listar");
             else
                 return View();
         }
