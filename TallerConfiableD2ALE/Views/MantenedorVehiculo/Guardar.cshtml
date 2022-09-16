@@ -1,0 +1,55 @@
+﻿@model VehiculoModel
+@{
+    ViewData["Title"] = "Guardar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                Crear vehículo
+            </div>
+            <div class="card-body">
+                <form asp-action="Guardar" asp-controller="MantenedorVehiculo" method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Placa</label>
+                        <input asp-for="placa" type="text" class="form-control">
+                        <span asp-validation-for="placa" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Marca</label>
+                        <input asp-for="marca" type="text" class="form-control">
+                        <span asp-validation-for="marca" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Modelo</label>
+                        <input asp-for="modelo" type="text" class="form-control">
+                        <span asp-validation-for="modelo" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Tipo de vehículo</label>
+                        <input asp-for="tipoVehiculo" type="text" class="form-control">
+                        <span asp-validation-for="tipoVehiculo" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Cilindraje</label>
+                        <input asp-for="cilindraje" type="text" class="form-control">
+                        <span asp-validation-for="cilindraje" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Ciudad de registro</label>
+                        <input asp-for="ciudadRegistro" type="text" class="form-control">
+                        <span asp-validation-for="ciudadRegistro" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Número Identificación</label>
+                        <input asp-for="identificacion" type="text" class="form-control">
+                        <span asp-validation-for="identificacion" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="bi bi-car-front-fill"></i> Guardar</button>
+                    <a asp-action="Listar" asp-controller="MantenedorVehiculo" class="btn btn-warning"><i class="bi bi-list"></i> Volver a la lista</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
