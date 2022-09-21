@@ -1,4 +1,5 @@
---CREATE DATABASE PRUEBA
+CREATE DATABASE PRUEBA
+--DROP DATABASE PRUEBA
 USE PRUEBA
 
 CREATE TABLE rol 
@@ -10,7 +11,7 @@ CREATE TABLE rol
 create table usuario
 (
     idUsuario INT PRIMARY KEY IDENTITY,
-    identificacion VARCHAR(20) NOT NULL,
+    identificacion VARCHAR(20) NOT NULL unique,--agregamos unique a la identificación de los usuarios--
     nombres VARCHAR(50) NOT NULL,
     apellidos VARCHAR(50) NOT NULL,
     telefono VARCHAR(15) NOT NULL,
@@ -95,6 +96,7 @@ BEGIN
     SELECT * FROM rol WHERE idRol=@idRol 
 END
 
+GO
 insert into usuario(identificacion, nombres, apellidos, telefono, correo, contrasena, fechaNacimiento,rolFK) VALUES (123,'Soy un','Cliente','3203019435','cliente@gmail.com','1234', '1998-05-15',1);
 insert into usuario(identificacion, nombres, apellidos, telefono, correo, contrasena, fechaNacimiento,rolFK) VALUES (1234,'Soy un','Auxiliar','3203019435','auxiliar@gmail.com','1234', '1998-05-15',2);
 insert into usuario(identificacion, nombres, apellidos, telefono, correo, contrasena, fechaNacimiento,rolFK) VALUES (12345,'Soy un','Jefe de Operaciones','3203019435','jefeOperaciones@gmail.com','1234', '1998-05-15',3);
