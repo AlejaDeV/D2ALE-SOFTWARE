@@ -1,0 +1,41 @@
+﻿@model List<RepuestoModel>
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h4 style="text-align:center"><i class="bi bi-wrench-adjustable"></i> LISTA DE REPUESTO </h4>
+    </div>
+    <div class="card-body">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <a asp-action="Guardar" asp-controller="MantenedorRepuesto" class="btn btn-success justify-content-md-end"> Nuevo Repuesto <i class="bi bi-plus-lg"></i></a>
+        </div>
+        <hr />
+        <table class="table table-bordered align-middle">
+            <thead class="table-primary">
+                <tr>
+                    <th><i class="bi bi-hash"></i> CODIGO</th>
+                    <th>NOMBRE</th>
+                    <th>PRECIO</th>
+                    <th>OPCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.IdRepuesto</td>
+                        <td>@item.NombreRepuesto</td>
+                        <td>@item.Precio</td>
+                        <td class="d-flex justify-content-around">
+                            <a asp-action="Editar" asp-controller="MantenedorRepuesto" class="btn btn-primary btn-sm" asp-route-IdRepuesto="@item.IdRepuesto"><i class="bi bi-pencil-square"></i></a>
+                            <a asp-action="Eliminar" asp-controller="MantenedorRepuesto" class="btn btn-danger btn-sm" asp-route-IdRepuesto="@item.IdRepuesto"><i class="bi bi-trash3-fill"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
