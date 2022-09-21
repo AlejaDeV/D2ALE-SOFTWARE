@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.CodeAnalysis;
 using TallerConfiableD2ALE.Datos;
 using TallerConfiableD2ALE.Models;
 
@@ -23,14 +26,28 @@ namespace TallerConfiableD2ALE.Controllers
         public IActionResult Guardar(UsuarioModel oUsuario)
         {
             //Recibe un objeto y lo guarda en la Base de datos
-            if(!ModelState.IsValid)//Verificamos si las validaciones no se cumplen
+            //if (!ModelState.IsValid)//Verificamos si las validaciones no se cumplen
+                //return View();
+            try
+            {
+                var respuesta = usuarioDatos.Guardar(oUsuario);
+                if (respuesta)
+                    return RedirectToAction("Listar");
+                else
+                    return View();
+            }
+            catch (Exception e)
+            {
+                if (e.InnerException.Message.Contains("duplicate"))
+                {
+                    
+                }
+                //ModelState.AddModelError(identiExistAttribute.GetCustomAttribute, e.InnerException.Message);
+                
                 return View();
+            }
 
-            var respuesta = usuarioDatos.Guardar(oUsuario);
-            if (respuesta)
-                return RedirectToAction("Listar");
-            else
-                return View();
+            
         }
         public IActionResult Editar(int idUsuario)
         {
@@ -43,6 +60,7 @@ namespace TallerConfiableD2ALE.Controllers
         public IActionResult Editar(UsuarioModel oUsuario)
         {
             //Recibe un objeto y lo guarda en la Base de datos
+            
             if (!ModelState.IsValid)//Verificamos si las validaciones no se cumplen
                 return View();
 

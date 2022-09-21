@@ -118,7 +118,7 @@ namespace TallerConfiableD2ALE.Datos
                     cmd.Parameters.AddWithValue("idUsuario", oUsuario.idUsuario);
                     cmd.Parameters.AddWithValue("nombres", oUsuario.nombres);
                     cmd.Parameters.AddWithValue("apellidos", oUsuario.apellidos);
-                    cmd.Parameters.AddWithValue("identificacion", oUsuario.identificacion);
+                    cmd.Parameters.AddWithValue("identificacion", oUsuario.identificacion);//Se pone identi2 ya que la validación del valor será distinta
                     cmd.Parameters.AddWithValue("telefono", oUsuario.telefono);
                     cmd.Parameters.AddWithValue("correo", oUsuario.correo);
                     cmd.Parameters.AddWithValue("contrasena", oUsuario.contrasena);

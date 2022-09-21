@@ -12,9 +12,9 @@
             </div>
             <div class="card-body">
                 <form asp-action="Editar" asp-controller="MantenedorVehiculo" method="post">
-                    <div class="mb-3">
+                    <div class="mb-3" hidden>
                         <label class="form-label">Placa</label>
-                        <input asp-for="placa" type="text" class="form-control" disabled>
+                        <input asp-for="placa" type="text" class="form-control">
                         <span asp-validation-for="placa" class="text-danger"></span>
                     </div>
                     <div class="mb-3">
