@@ -4,6 +4,8 @@
 <html lang="es">
 <head>
     <meta charset="utf-8" />
+    <link href="~/css/index.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Taller Confiable </title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -58,7 +60,9 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="MantenedorRepuesto" asp-action="Listar">Repuesto</a>
                             </li>
-                        }
+                        }                        
+                    </ul>
+                    <ul>
                         @if (User.IsInRole("Mecanico") || User.IsInRole("JefeOperaciones") || User.IsInRole("Cliente") || User.IsInRole("Auxiliar"))
                         {
                             <li class="nav-item">

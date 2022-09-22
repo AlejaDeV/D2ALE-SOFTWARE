@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "enbJdYpnv1XUm1NkiP0dolk0K7KdeeaZFldptQtxEHs=",
+  "Hash": "m9g8uRCm9r4cQWJPL76IHKKJ0wFb21ng6CsIk6Hh6qE=",
   "Source": "TallerConfiableD2ALE",
   "BasePath": "_content/TallerConfiableD2ALE",
   "Mode": "Default",
@@ -68,6 +68,23 @@
       "OriginalItemSpec": "wwwroot\\css\\estilosEye.css"
     },
     {
+      "Identity": "C:\\Users\\pipe2\\Documents\\Desarrollo_de_software_ciclo_3\\desarrollo_software\\TallerConfiableD2ALE\\D2ALE-SOFTWARE\\TallerConfiableD2ALE\\wwwroot\\css\\index.css",
+      "SourceId": "TallerConfiableD2ALE",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pipe2\\Documents\\Desarrollo_de_software_ciclo_3\\desarrollo_software\\TallerConfiableD2ALE\\D2ALE-SOFTWARE\\TallerConfiableD2ALE\\wwwroot\\",
+      "BasePath": "_content/TallerConfiableD2ALE",
+      "RelativePath": "css/index.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\index.css"
+    },
+    {
       "Identity": "C:\\Users\\pipe2\\Documents\\Desarrollo_de_software_ciclo_3\\desarrollo_software\\TallerConfiableD2ALE\\D2ALE-SOFTWARE\\TallerConfiableD2ALE\\wwwroot\\css\\login.css",
       "SourceId": "TallerConfiableD2ALE",
       "SourceType": "Discovered",
@@ -117,6 +134,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\pipe2\\Documents\\Desarrollo_de_software_ciclo_3\\desarrollo_software\\TallerConfiableD2ALE\\D2ALE-SOFTWARE\\TallerConfiableD2ALE\\wwwroot\\img\\imagen_banner.jpg",
+      "SourceId": "TallerConfiableD2ALE",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pipe2\\Documents\\Desarrollo_de_software_ciclo_3\\desarrollo_software\\TallerConfiableD2ALE\\D2ALE-SOFTWARE\\TallerConfiableD2ALE\\wwwroot\\",
+      "BasePath": "_content/TallerConfiableD2ALE",
+      "RelativePath": "img/imagen_banner.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\imagen_banner.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\pipe2\\Documents\\Desarrollo_de_software_ciclo_3\\desarrollo_software\\TallerConfiableD2ALE\\D2ALE-SOFTWARE\\TallerConfiableD2ALE\\wwwroot\\img\\imGEN_PAGINA.jpg",
+      "SourceId": "TallerConfiableD2ALE",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pipe2\\Documents\\Desarrollo_de_software_ciclo_3\\desarrollo_software\\TallerConfiableD2ALE\\D2ALE-SOFTWARE\\TallerConfiableD2ALE\\wwwroot\\",
+      "BasePath": "_content/TallerConfiableD2ALE",
+      "RelativePath": "img/imGEN_PAGINA.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\imGEN_PAGINA.jpg"
     },
     {
       "Identity": "C:\\Users\\pipe2\\Documents\\Desarrollo_de_software_ciclo_3\\desarrollo_software\\TallerConfiableD2ALE\\D2ALE-SOFTWARE\\TallerConfiableD2ALE\\wwwroot\\img\\LogoD2ALE.png",
