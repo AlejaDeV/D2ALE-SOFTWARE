@@ -2,12 +2,15 @@
 using TallerConfiableD2ALE.Datos;
 using TallerConfiableD2ALE.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace TallerConfiableD2ALE.Controllers
 {
     public class MantenedorServicioController : Controller
     {
         ServicioDatos servicioDatos = new ServicioDatos();
+        UsuarioDatos listaMecanicos = new UsuarioDatos();
+        VehiculoDatos listaVehiculos = new VehiculoDatos();
 
         [Authorize(Roles = "Mecanico,JefeOperaciones,Cliente")]
         public IActionResult Listar()
@@ -18,8 +21,12 @@ namespace TallerConfiableD2ALE.Controllers
         }
 
         [Authorize(Roles = "Mecanico,JefeOperaciones")]
+
+
         public IActionResult Guardar()
         {
+            ViewBag.ListMec = new SelectList(listaMecanicos.Listar(),"idUsuario","nombres");
+            ViewBag.ListVehi = new SelectList(listaVehiculos.Listar(), "placa", "placa");
             return View();
         }
         [HttpPost]
@@ -27,7 +34,7 @@ namespace TallerConfiableD2ALE.Controllers
         {
             //SE RECIBE UN OBJETO PARA GUARDARLO EN LA BD
             if (!ModelState.IsValid)//Verificamos si las validaciones no se cumplen
-                return View();
+                   return RedirectToAction("Guardar");
 
             var respuesta = servicioDatos.Guardar(oServicio);
             if (respuesta)

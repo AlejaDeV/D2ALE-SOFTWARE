@@ -21,8 +21,9 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Placas del Vehículo</label>
-                <input asp-for="VehiculoFK" type="text" class="form-control">
-                <span asp-validation-for="VehiculoFK" class="text-danger"></span>
+                <select asp-for="VehiculoFK" class="form-control" asp-items="ViewBag.ListVehi"></select>
+               @* <input asp-for="VehiculoFK" type="text" class="form-control">
+                <span asp-validation-for="VehiculoFK" class="text-danger"></span>*@
             </div>
             <div class="mb-3">
                 <label class="form-label">Nivel de Aceite</label>
@@ -46,8 +47,9 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Mecánico Encargado</label>
-                <input asp-for="MecanicoFK" type="number" class="form-control">
-                <span asp-validation-for="MecanicoFK" class="text-danger"></span>
+                <select asp-for="MecanicoFK" class="form-control" asp-items="ViewBag.ListMec"></select>
+              @*<input asp-for="MecanicoFK" type="number" class="form-control">
+                <span asp-validation-for="MecanicoFK" class="text-danger"></span>*@
             </div>
             <div class="mb-3">
                 <label class="form-label">Fecha de Realización</label>
