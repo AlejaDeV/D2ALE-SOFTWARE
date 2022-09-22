@@ -397,3 +397,33 @@ GO
 
 EXECUTE sp_ListarUsuario
 --DROP DATABASE PRUEBA
+
+--PRIMER PROCEDIMIENTO ALMACENADO PARA EL LOGIN, EN ESTE SE OBTINE EL id DEL USUARIO
+CREATE PROCEDURE sp_ValidarUsuario(
+    @identificacion VARCHAR (20),
+    @contrasena VARCHAR(100)
+)
+as 
+BEGIN
+    IF(exists(select * from usuario where identificacion=@identificacion and contrasena=@contrasena))
+        SELECT idUsuario FROM usuario WHERE identificacion=@identificacion and contrasena=@contrasena
+    ELSE
+        select '0' 
+        
+    END
+GO
+
+--SEGUNDO PROCEDIMIENTO ALMACENADO PARA LOGIN, EN ESTE SE OBTIENE EL rol
+create PROCEDURE sp_ValidarUsuarioRol(
+    @identificacion VARCHAR (20),
+    @contrasena VARCHAR(100)
+)
+as 
+BEGIN
+    IF(exists(select * from usuario where identificacion=@identificacion and contrasena=@contrasena))
+        SELECT rolFK FROM usuario WHERE identificacion=@identificacion and contrasena=@contrasena 
+    ELSE
+        select '0' 
+        
+    END
+GO
