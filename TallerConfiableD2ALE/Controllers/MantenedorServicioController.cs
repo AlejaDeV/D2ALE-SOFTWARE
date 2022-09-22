@@ -1,18 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TallerConfiableD2ALE.Datos;
 using TallerConfiableD2ALE.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TallerConfiableD2ALE.Controllers
 {
     public class MantenedorServicioController : Controller
     {
         ServicioDatos servicioDatos = new ServicioDatos();
+
+        [Authorize(Roles = "Mecanico,JefeOperaciones,Cliente")]
         public IActionResult Listar()
         {
             //VISUALIZACIÓN DE LOS DATOS DE LA TABLA SERVICIO
             var oLista = servicioDatos.Listar();
             return View(oLista);
-        }        
+        }
+
+        [Authorize(Roles = "Mecanico,JefeOperaciones")]
         public IActionResult Guardar()
         {
             return View();
@@ -30,6 +35,8 @@ namespace TallerConfiableD2ALE.Controllers
             else
                 return View();
         }
+
+        [Authorize(Roles = "Mecanico,JefeOperaciones")]
         //Metodo para Editar
         public IActionResult Editar(int IdServicio)
         {
@@ -49,7 +56,9 @@ namespace TallerConfiableD2ALE.Controllers
                 return RedirectToAction("Listar");
             else
                 return View();
-        }        
+        }
+
+        [Authorize(Roles = "Mecanico,JefeOperaciones")]
         //METODO PARA ELIMINAR
         public IActionResult Eliminar(int IdServicio)
         {

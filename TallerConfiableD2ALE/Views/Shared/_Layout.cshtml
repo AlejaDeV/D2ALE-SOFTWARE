@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8" />
@@ -26,22 +28,43 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>                        
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="MantenedorUsuario" asp-action="Listar">Usuario</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="MantenedorServicio" asp-action="Listar">Servicio</a>
-                        </li>                        
+                        </li>                
+                        @if (User.IsInRole("Auxiliar") || User.IsInRole("JefeOperaciones"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="MantenedorUsuario" asp-action="Listar">Usuario</a>
+                            </li>
+                        }
+                        @if (User.IsInRole("Mecanico") || User.IsInRole("JefeOperaciones") || User.IsInRole("Cliente"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="MantenedorServicio" asp-action="Listar">Servicio</a>
+                            </li>
+                        }
+                        @if (User.IsInRole("Cliente") || User.IsInRole("JefeOperaciones"))
+                        {
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="MantenedorSoat" asp-action="Listar">Soat</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="MantenedorVehiculo" asp-action="Listar">Vehiculo</a>
-                        </li>                        
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="MantenedorRepuesto" asp-action="Listar">Repuesto</a>
-                        </li>
+                        }
+                        @if (User.IsInRole("Mecanico") || User.IsInRole("JefeOperaciones") || User.IsInRole("Cliente") || User.IsInRole("Auxiliar"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="MantenedorVehiculo" asp-action="Listar">Vehiculo</a>
+                            </li>
+                        }
+                        @if (User.IsInRole("Mecanico") || User.IsInRole("JefeOperaciones"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="MantenedorRepuesto" asp-action="Listar">Repuesto</a>
+                            </li>
+                        }
+                        @if (User.IsInRole("Mecanico") || User.IsInRole("JefeOperaciones") || User.IsInRole("Cliente") || User.IsInRole("Auxiliar"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="MantenedorLogin" asp-action="CerrarSesion">Cerrar Sesion</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

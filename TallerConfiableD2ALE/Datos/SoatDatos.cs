@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using TallerConfiableD2ALE.Controllers;
 using TallerConfiableD2ALE.Models;
 namespace TallerConfiableD2ALE.Datos
 {
@@ -7,29 +8,33 @@ namespace TallerConfiableD2ALE.Datos
     {
         public List<SoatModel> Listar()
         {
+            MantenedorLoginController rol = new MantenedorLoginController();
+
             var oLista = new List<SoatModel>();
 
             var cn = new Conexion();
 
             using (var conexion = new SqlConnection(cn.getCadenaSQL()))
             {
-                conexion.Open();
+                conexion.Open();                              
+               
                 SqlCommand cmd = new SqlCommand("sp_ListarSoat", conexion);
-                cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                using (var dr = cmd.ExecuteReader())
-                {
-                    while (dr.Read())
+                    using (var dr = cmd.ExecuteReader())
                     {
-                        oLista.Add(new SoatModel()
+                        while (dr.Read())
                         {
-                            idSOAT = Convert.ToInt32(dr["idSOAT"]),
-                            vehiculoFK = dr["vehiculoFK"].ToString(),
-                            fechaCompra = Convert.ToDateTime(dr["fechaCompra"]),
-                            fechaVencimiento = Convert.ToDateTime(dr["fechaVencimiento"])
-                        });
+                            oLista.Add(new SoatModel()
+                            {
+                                idSOAT = Convert.ToInt32(dr["idSOAT"]),
+                                vehiculoFK = dr["vehiculoFK"].ToString(),
+                                fechaCompra = Convert.ToDateTime(dr["fechaCompra"]),
+                                fechaVencimiento = Convert.ToDateTime(dr["fechaVencimiento"])
+                            });
+                        }
                     }
-                }
+                
             }
             return oLista;
         }

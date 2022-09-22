@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.CodeAnalysis;
 using TallerConfiableD2ALE.Datos;
 using TallerConfiableD2ALE.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TallerConfiableD2ALE.Controllers
 {
@@ -49,6 +50,8 @@ namespace TallerConfiableD2ALE.Controllers
 
             
         }
+
+        [Authorize(Roles = "Auxiliar,JefeOperaciones")]
         public IActionResult Editar(int idUsuario)
         {
             //Solo nos devuelve la vista del formulario guardar
@@ -70,6 +73,8 @@ namespace TallerConfiableD2ALE.Controllers
             else
                 return View();
         }
+
+        [Authorize(Roles = "Auxiliar,JefeOperaciones")]
         public IActionResult Eliminar(int idUsuario)
         {
             //Solo nos devuelve la vista del formulario guardar
